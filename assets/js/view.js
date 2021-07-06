@@ -58,6 +58,7 @@ view.setActiveScreen = (screenName) => {
             document.getElementById('app').innerHTML = components.ShowProfile;
             document.getElementById('Lab').addEventListener('click', (e) => view.setActiveScreen('MainScreen'));
             document.getElementById('EditProfile').addEventListener('click', (e) => view.setActiveScreen('EditProfile'));
+            document.getElementById('EditProfile-btn').addEventListener('click', (e) => view.setActiveScreen('EditProfile'));
             document.getElementById('SignOut').addEventListener('click', () => firebase.auth().signOut());
             break;
 
