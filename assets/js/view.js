@@ -1,7 +1,27 @@
+const auth = firebase.auth();
+const db = firebase.firestore();
 const view = {};
 
 view.setMessage = (elementId, message = '') => {
     document.getElementById(elementId).innerText = message;
+}
+
+
+const viewInfo = (user) => {
+    if (user) {
+
+        view.setMessage('welcome_name_user', 'Welcome ' + user.displayName);
+    }
+}
+
+const viewProfile = () => {
+    auth.onAuthStateChanged((user) => {
+        console.log(user)
+        view.setMessage('name-info', ' ' + user.displayName);
+        view.setMessage('welcome_name_user', 'Welcome ' + user.displayName);
+        view.setMessage('contact-info', ' ' + user.email);
+
+    })
 }
 
 view.setActiveScreen = (screenName) => {
@@ -56,29 +76,31 @@ view.setActiveScreen = (screenName) => {
         case 'ShowProfile':
 
             document.getElementById('app').innerHTML = components.ShowProfile;
-            document.getElementById('Lab').addEventListener('click', (e) => view.setActiveScreen('MainScreen'));
             document.getElementById('EditProfile').addEventListener('click', (e) => view.setActiveScreen('EditProfile'));
             document.getElementById('EditProfile-btn').addEventListener('click', (e) => view.setActiveScreen('EditProfile'));
             document.getElementById('SignOut').addEventListener('click', () => firebase.auth().signOut());
+            viewProfile();
+
+
             break;
 
         case 'EditProfile':
 
             document.getElementById('app').innerHTML = components.EditProfile;
-            document.getElementById('Lab').addEventListener('click', (e) => view.setActiveScreen('MainScreen'));
             document.getElementById('ShowProfile').addEventListener('click', (e) => view.setActiveScreen('ShowProfile'));
-            document.getElementById('name-info').innerHTML = ' ';
+
             document.getElementById('SignOut').addEventListener('click', () => firebase.auth().signOut());
+            viewProfile();
             break;
         case 'MainScreen':
             // mount chat screen
             document.getElementById('app').innerHTML = components.MainScreen;
             // add message form listener
-            document.getElementById('Lab').addEventListener('click', (e) => view.setActiveScreen('MainScreen'));
             document.getElementById('ShowProfile').addEventListener('click', (e) => view.setActiveScreen('ShowProfile'));
             document.getElementById('EditProfile').addEventListener('click', (e) => view.setActiveScreen('EditProfile'));
 
             document.getElementById('SignOut').addEventListener('click', () => firebase.auth().signOut());
+
             let dataAfterConvertFile;
             const realFileBtn = document.getElementById("lab-upload-data");
             const customBtn = document.getElementById("custom-button");

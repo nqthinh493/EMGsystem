@@ -29,13 +29,13 @@ controller.register = async(registerInfo) => {
 
     if (registerInfo.firstName && registerInfo.lastName && registerInfo.email && registerInfo.password && registerInfo.confirmPassword === registerInfo.password) {
         try {
-            await firebase.auth().createUserWithEmailAndPassword(registerInfo.email, registerInfo.password);
+            await auth.createUserWithEmailAndPassword(registerInfo.email, registerInfo.password);
 
-            firebase.auth().currentUser.updateProfile({
+            auth.currentUser.updateProfile({
                 displayName: `${registerInfo.firstName} ${registerInfo.lastName}`,
             })
 
-            firebase.auth().currentUser.sendEmailVerification();
+            auth.currentUser.sendEmailVerification();
             view.setMessage('form-success', 'Register success');
         } catch (error) {
             view.setMessage('form-error', error.message)
@@ -58,7 +58,7 @@ controller.login = async(loginInfo) => {
     // call firebase
     if (loginInfo.email && loginInfo.password) {
         try {
-            const loginResult = await firebase.auth().signInWithEmailAndPassword(loginInfo.email, loginInfo.password);
+            const loginResult = await auth.signInWithEmailAndPassword(loginInfo.email, loginInfo.password);
 
             if (!loginResult.user.emailVerified) {
                 view.setMessage('form-error', 'Please verify your email first');

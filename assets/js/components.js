@@ -131,10 +131,10 @@ components.MainScreen = `
 
         <nav id="navbar" class="navbar">
             <ul>
-              <li><a class="nav-link scrollto " href="index.html">Home</a></li>
-              <li><a class="nav-link scrollto" href="#about">About</a></li>
-              <li><a class="nav-link scrollto" id='Lab'>Lab</a></li>
-              <li class="dropdown"><a href="#"><span>Setting</span> <i class="bi bi-chevron-down"></i></a>
+                <li><a class="nav-link scrollto " href="index.html">Home</a></li>
+                <li><a class="nav-link scrollto" href="#about">About</a></li>
+                <li><a class="nav-link scrollto" href="index.html">Lab</a></li>
+                <li class="dropdown"><a href="#"><span>Setting</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li><a href="#">Drop Down 1</a></li>
                         <li><a id='EditProfile'>Edit Profile</a></li>
@@ -151,22 +151,18 @@ components.MainScreen = `
     </div>
 </header>
 <!-- End Header -->
+<!-- ======= Breadcrumbs /  ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
 
-<main id="main">
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="welcome_message"><span class="welcome_message_name" id="welcome_name_user"></span></span>
 
-    <!-- ======= Breadcrumbs /  ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-        <div class="container">
+                </div>
 
-            <div class="d-flex justify-content-between align-items-center">
-                <span class="welcome_message"><span class="welcome_message_name" id="welcome_name_user">welcomeuser</span></span>
-      
             </div>
-
-        </div>
-    </section>
-    <!-- End Breadcrumbs -->
-
+        </section>
+        <!-- End Breadcrumbs -->
     <!-- ======= Framework Section ======= -->
     <section id="grid-container" class="grid-container">
         <!-- Data file from sever of user -->
@@ -228,31 +224,6 @@ components.MainScreen = `
 </main>
 <!-- End #main -->
 
-<!-- ======= Footer ======= -->
-<footer id="footer">
-    <div class="container">
-        <h3>Sparc-lab</h3>
-        <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
-        <div class="social-links">
-            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>
-        <div class="copyright">
-            &copy; Copyright <strong><span>Sparc-lab</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-            Designed by
-            <a href="#">Sparc-lab</a>
-        </div>
-    </div>
-</footer>
-<!-- End Footer -->
-
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
 `;
 components.EditProfile = `
 <!-- ======= Header ======= -->
@@ -267,7 +238,7 @@ components.EditProfile = `
             <ul>
                 <li><a class="nav-link scrollto " href="index.html">Home</a></li>
                 <li><a class="nav-link scrollto" href="#about">About</a></li>
-                <li><a class="nav-link scrollto" id='Lab'>Lab</a></li>
+                <li><a class="nav-link scrollto" href="index.html">Lab</a></li>
                 <li class="dropdown"><a href="#"><span>Setting</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li><a href="#">Drop Down 1</a></li>
@@ -285,40 +256,37 @@ components.EditProfile = `
     </div>
 </header>
 <!-- End Header -->
+<!-- ======= Breadcrumbs /  ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
 
-<main id="main">
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="welcome_message"><span class="welcome_message_name" id="welcome_name_user"></span></span>
 
-    <!-- ======= Breadcrumbs /  ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-        <div class="container">
-
-            <div class="d-flex justify-content-between align-items-center">
-                <span class="welcome_message"><span class="welcome_message_name" id="name_user">Nguyen Quang Thinh</span></span>
+                </div>
 
             </div>
-
-        </div>
-    </section>
-    <!-- End Breadcrumbs -->
-
+        </section>
+        <!-- End Breadcrumbs -->
     <!-- ======= Framework Section ======= -->
     <section id="grid-container" class="grid-container">
         <!-- Data file from sever of user -->
         <div class="box-data">
-            <h3>Data Files</h3>
+            <h3>List</h3>
 
-            <div class="box_datafile" id="list_datafile"></div>
         </div>
 
         <!-- End Data file from sever of user -->
         <!-- Info - Chart -->
         <div class="box-info-chart row">
             <h3>Patient Information</h3>
+            <strong>Name:</strong><input><a id="edit-name-info"></a></input>
+            <strong>Contact:</strong><input><a id="edit-contact-info"></a></input>
+            <strong>Address:</strong><input><a id="edit-add-info"></a></input>
+            <strong>Note:</strong><input><a id="edit-note-info"></a></input>
+            <strong>Age:</strong><input></input>
+            <strong>Height/Weight:</strong><input></input>
 
-            <input type="text" id='namebox' placeholder="Name"><br>
-            <input type="text" id='rollbox' placeholder="Rollno"><br>
-            <input type="text" id='secbox' placeholder="seclection"><br>
-            <input type="text" id='genbox' placeholder="Gender"><br>
             <button id="insert">ADD</button>
             <button id="select">Select</button>
             <button id="update">Update</button>
@@ -342,31 +310,6 @@ components.EditProfile = `
 
 </main>
 <!-- End #main -->
-
-<!-- ======= Footer ======= -->
-<footer id="footer">
-    <div class="container">
-        <h3>Sparc-lab</h3>
-        <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
-        <div class="social-links">
-            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>
-        <div class="copyright">
-            &copy; Copyright <strong><span>Sparc-lab</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-            Designed by
-            <a href="#">Sparc-lab</a>
-        </div>
-    </div>
-</footer>
-<!-- End Footer -->
-
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 `;
 components.ShowProfile = `
 <!-- ======= Header ======= -->
@@ -379,10 +322,10 @@ components.ShowProfile = `
 
         <nav id="navbar" class="navbar">
             <ul>
-              <li><a class="nav-link scrollto " href="index.html">Home</a></li>
-              <li><a class="nav-link scrollto" href="#about">About</a></li>
-              <li><a class="nav-link scrollto" id='Lab'>Lab</a></li>
-              <li class="dropdown"><a href="#"><span>Setting</span> <i class="bi bi-chevron-down"></i></a>
+                <li><a class="nav-link scrollto " href="index.html">Home</a></li>
+                <li><a class="nav-link scrollto" href="#about">About</a></li>
+                <li><a class="nav-link scrollto" href="index.html">Lab</a></li>
+                <li class="dropdown"><a href="#"><span>Setting</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li><a href="#">Drop Down 1</a></li>
                         <li><a id='EditProfile'>Edit Profile</a></li>
@@ -399,29 +342,25 @@ components.ShowProfile = `
     </div>
 </header>
 <!-- End Header -->
+<!-- ======= Breadcrumbs /  ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
 
-<main id="main">
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="welcome_message"><span class="welcome_message_name" id="welcome_name_user"></span></span>
 
-    <!-- ======= Breadcrumbs /  ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-        <div class="container">
+                </div>
 
-            <div class="d-flex justify-content-between align-items-center">
-                <span class="welcome_message"><span class="welcome_message_name" id="welcome_name_user">Nguyen Quang Thinh</span></span>
-      
             </div>
-
-        </div>
-    </section>
-    <!-- End Breadcrumbs -->
-
+        </section>
+        <!-- End Breadcrumbs -->
     <!-- ======= Framework Section ======= -->
     <section id="grid-container" class="grid-container">
         <!-- Data file from sever of user -->
         <div class="box-data">
-            <h3>Data Files</h3>
+            <h3>List</h3>
 
-            <div class="box_datafile" id="list_datafile"></div>
+
         </div>
 
         <!-- End Data file from sever of user -->
@@ -462,29 +401,83 @@ components.ShowProfile = `
 </main>
 <!-- End #main -->
 
-<!-- ======= Footer ======= -->
-<footer id="footer">
-    <div class="container">
-        <h3>Sparc-lab</h3>
-        <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
-        <div class="social-links">
-            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+
+`;
+components.EditProfile1 = `
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <div class="logo">
+            <h1><a href="index.html">Sparc-lab</a></h1>
         </div>
-        <div class="copyright">
-            &copy; Copyright <strong><span>Sparc-lab</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-            Designed by
-            <a href="#">Sparc-lab</a>
-        </div>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto " href="index.html">Home</a></li>
+                <li><a class="nav-link scrollto" href="#about">About</a></li>
+                <li><a class="nav-link scrollto" id='Lab'>Lab</a></li>
+                <li class="dropdown"><a href="#"><span>Setting</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="#">Drop Down 1</a></li>
+                        <li><a id='EditProfile'>Edit Profile</a></li>
+                        <li><a id='ShowProfile'>Profile</a></li>
+                        <li><a id='SignOut'>Sign out</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+
     </div>
-</footer>
-<!-- End Footer -->
+</header>
+<!-- End Header -->
+    <!-- ======= Framework Section ======= -->
+    <section id="grid-container" class="grid-container">
+        <!-- Data file from sever of user -->
+        <div class="box-data">
+            <h3>Data Files</h3>
 
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+            <div class="box_datafile" id="list_datafile"></div>
+        </div>
 
+        <!-- End Data file from sever of user -->
+        <!-- Info - Chart -->
+        <div class="box-info-chart row">
+            <h3>Patient Information</h3>
+            <strong>Name:</strong><input><a id="name-info"></a></input>
+            <strong>Contact:</strong><input><a id="contact-info"></a></input>
+            <strong>Address:</strong><input><a id="add-info"></a></input>
+            <strong>Note:</strong><input><a id="note-info"></a></input>
+            <strong>Age:</strong><input></input>
+            <strong>Height/Weight:</strong><input></input>
+            <input type="text" id='namebox' placeholder="Name"><br>
+            <input type="text" id='rollbox' placeholder="Rollno"><br>
+            <input type="text" id='secbox' placeholder="seclection"><br>
+            <input type="text" id='genbox' placeholder="Gender"><br>
+            <button id="insert">ADD</button>
+            <button id="select">Select</button>
+            <button id="update">Update</button>
+            <button id="delete">Delete</button>
+
+
+        </div>
+        <!-- End Info - Chart -->
+        <div class="box-info">
+            <h3>.</h3>
+            <!-- <ul>
+
+        </ul> -->
+
+
+        </div>
+
+
+    </section>
+    <!-- End Portfolio Details Section -->
+
+</main>
+<!-- End #main -->
 `;
