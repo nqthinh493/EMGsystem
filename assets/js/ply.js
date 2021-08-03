@@ -62,6 +62,7 @@ view.graphFrequencyDomain = (data) => {
     re = y_data.map(e => e - mean);
     im = x_data;
     console.log(re.length);
+    document.getElementById('timer').innerHTML = ' ' + re.length / 1000 + ' (S)';
     var NFFT = fft.dim(re, im);
     console.log(NFFT);
 
@@ -69,8 +70,8 @@ view.graphFrequencyDomain = (data) => {
     console.log(re, im);
 
 
-    var frequencies = fft.frequencies(y_data, x_data, 1000)
-    var amplitude = fft.amplitude(y_data, x_data);
+    var frequencies = fft.frequencies(re, im, 1000)
+    var amplitude = fft.amplitude(re, im);
     console.log(frequencies, amplitude);
     let trace2 = {
         x: frequencies,

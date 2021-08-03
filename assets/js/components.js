@@ -181,7 +181,7 @@ components.MainScreen = `
                 <li><strong>Height/Weight:</strong></li>
             </ul>
             <ul class="col-xl-4" ;>
-                <li><strong>Time Stamp:</strong></li>
+                <li><strong>Timer:</strong><a id="timer"></a></li>
                 <li><strong>Body Part:</strong></li>
             </ul>
             <ul class="col-xl-4" ;>
@@ -287,10 +287,10 @@ components.EditProfile = `
             <strong>Age:</strong><input></input>
             <strong>Height/Weight:</strong><input></input>
 
-            <button id="insert">ADD</button>
-            <button id="select">Select</button>
-            <button id="update">Update</button>
-            <button id="delete">Delete</button>
+            <button class='btn-upload' id="insert">ADD</button>
+            <button class='btn-upload' id="select">Select</button>
+            <button class='btn-upload' id="update">Update</button>
+            <button class='btn-upload' id="delete">Delete</button>
 
 
         </div>

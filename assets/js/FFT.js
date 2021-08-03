@@ -49,23 +49,23 @@
                 return sps * (i) / N;
             });
         },
-        // power: function power(F1, F2) {
-        //     return this.loop(this.dim(F1, F2), function(i) {
-        //         return F1[i] * F1[i] + F2[i] * F2[i];
-        //     });
-        // },
-        // phase: function phase(F1, F2) {
-        //     return this.loop(this.dim(F1, F2), function(i) {
-        //         return Math.atan2(F2[i], F1[i]);
-        //     });
-        // },
-        // periods: function periods(F1, F2, samplingrate) {
-        //     var sps = samplingrate || this.settings.samplingrate;
-        //     var N = this.dim(F1, F2);
-        //     return this.loop(this.dim(F1, F2), function(i) {
-        //         return N / (sps * (i));
-        //     });
-        // },
+        power: function power(F1, F2) {
+            return this.loop(this.dim(F1, F2), function(i) {
+                return F1[i] * F1[i] + F2[i] * F2[i];
+            });
+        },
+        phase: function phase(F1, F2) {
+            return this.loop(this.dim(F1, F2), function(i) {
+                return Math.atan2(F2[i], F1[i]);
+            });
+        },
+        periods: function periods(F1, F2, samplingrate) {
+            var sps = samplingrate || this.settings.samplingrate;
+            var N = this.dim(F1, F2);
+            return this.loop(this.dim(F1, F2), function(i) {
+                return N / (sps * (i));
+            });
+        },
         calc: function calc(SW, F1, F2) {
             var WN, T, A1, A2, B1, B2, W1, W2, C, S, m1, i, j, k, l, jl, jm, m, kl;
 
