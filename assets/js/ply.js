@@ -62,7 +62,7 @@ view.graphFrequencyDomain = (data) => {
     re = y_data.map(e => e - mean);
     im = x_data;
     console.log(re.length);
-    document.getElementById('timer').innerHTML = ' ' + re.length / 1000 + ' (S)';
+    document.getElementById('timer').innerHTML = ' ' + re.length / 1000 + ' (s)';
     var NFFT = fft.dim(re, im);
     console.log(NFFT);
 
